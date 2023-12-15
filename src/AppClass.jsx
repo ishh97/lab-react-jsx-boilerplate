@@ -3,27 +3,25 @@ import "./App.css"
 import elephant from "./images/elephant.jpeg";
 
 export default class AppClass extends Component{
+  // constructor (){
+
+  // }
+  render(props){
+    const imgData = this.props.myData
+    return(
+      <>
+      {
+        imgData.map((item, index) =>{
+          return(<div key={index}>
+            <img src={item.img} alt="" />
+          </div>)
+         }) 
+        }
   
-  imageData = ()=>{
-    let data = [
-      {
-        id:1,
-        img:elephant
-      },
-      {
-        id:2,
-        img:elephant
-      },
-      {
-        id:3,
-        img:elephant
-      },
-      {
-        id:4,
-        img:elephant
-      }
-    ]
-    return data;
+      </>
+    )
+    
+
   }
 
   // code here

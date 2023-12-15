@@ -1,30 +1,28 @@
 import './App.css';
 import elephant from "./images/elephant.jpeg";
 
-const imageData = ()=>{
-  let data = [
-    {
-      id:1,
-      img:elephant
-    },
-    {
-      id:2,
-      img:elephant
-    },
-    {
-      id:3,
-      img:elephant
-    },
-    {
-      id:4,
-      img:elephant
-    }
-  ]
-  return data;
-}
 
-function App() {
+
+function App(props) {
   // code here
+  let imgData = [...props.myData]
+  console.log(imgData)
+  return (
+   <>
+   <h1>Kalvium Gallery</h1>
+   <div className='img-div'>
+   {
+     imgData.map((item, index)=>{
+      return(<div key={index}>
+        <img src={item.img} alt="" />
+      </div>)
+     }) 
+    } 
+   </div>
+     
+   </>
+  )
+
 }
 
 export default App;
